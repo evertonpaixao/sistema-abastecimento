@@ -12,7 +12,7 @@ if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Abastecimento</title>
+    <title>Formulário de Abastecimento 2</title>
     <style>
         * {
             box-sizing: border-box;
