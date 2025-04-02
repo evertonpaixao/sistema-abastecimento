@@ -1,15 +1,18 @@
 <?php
-$motoristas = [
-    'motorista1' => 'senha123',
-    'motorista2' => 'senha456',
-];
+// Inicia a sessão (não será usada na Vercel)
+session_start();
 
-$nome = $_POST['nome'] ?? '';
-$senha = $_POST['senha'] ?? '';
+// Credenciais do admin (substitua por um método mais seguro em produção)
+$admin_usuario = 'motorista1';
+$admin_senha = 'admin123';
 
-if (isset($motoristas[$nome]) && $motoristas[$nome] === $senha) {
+// Obtém os dados do formulário
+$usuario = $_POST['nome'];
+$senha = $_POST['senha'];
+
+if ($usuario === $admin_usuario && $senha === $admin_senha) {
     // Criar o cookie
-    setcookie('motorista_logado', $nome, time() + 3600, '/', '', false, true);
+    setcookie('motorista_logado', $usuario, time() + 3600, '/', '', false, true);
 
     // Redireciona com um parâmetro para indicar sucesso
     header('Location: formulario.php?login=sucesso');
