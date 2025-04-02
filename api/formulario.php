@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['nome'])) {
+if (!isset($_COOKIE['motorista_logado'])) {
     header('Location: index.php');
     exit();
 }
@@ -352,6 +352,7 @@ if (!isset($_SESSION['nome'])) {
         </header>
 
         <h1 class="form-title">Registro de Abastecimento</h1>
+        <?php echo "Bem-vindo, " . htmlspecialchars($_COOKIE['motorista_logado']) . "!"; ?>
         
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
