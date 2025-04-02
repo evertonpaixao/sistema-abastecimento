@@ -4,8 +4,8 @@ $motoristas = [
     'motorista2' => 'senha456',
 ];
 
-$nome = $_POST['nome'] ?? '';
-$senha = $_POST['senha'] ?? '';
+$nome = $_POST['nome'];
+$senha = $_POST['senha'];
 
 if (isset($motoristas[$nome]) && $motoristas[$nome] === $senha) {
     // Criando um cookie válido por 1 hora
