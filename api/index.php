@@ -4,7 +4,7 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login do Motorista</h1>
+    <h1>Login do Motorista Combustivel</h1>
     <?php
 if (isset($_GET['erro'])) {
     echo "<script>alert('Login inválido! Tente novamente.');</script>";

@@ -1,10 +1,9 @@
 <?php
 session_start();
-if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
-    header('Location: admin/login_admin.php');
+if (!isset($_COOKIE['motorista_logado'])) {
+    header('Location: index.php');
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +39,10 @@ if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
             max-width:200px;
             margin: 0 auto;
             display:table;
+        }
+
+        .text-center {
+            text-align:center;
         }
         
         .form-container {
@@ -328,8 +331,8 @@ if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
             <img src="images/logo-abastecimento.png" alt="" width="100%"/>
         </header>
 
+        <p class="text-center"><?php echo "Bem-vindo, " . "<b>" . htmlspecialchars($_COOKIE['motorista_logado']) . "</b>" . "!"; ?></p>
         <h1 class="form-title">Registro de Abastecimento</h1>
-        <!-- <?php echo "Bem-vindo, " . htmlspecialchars($_COOKIE['motorista_logado']) . "!"; ?> -->
         
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
