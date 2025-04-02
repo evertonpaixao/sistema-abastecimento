@@ -1,9 +1,14 @@
 <?php
 session_start();
-if (!isset($_COOKIE['motorista_logado'])) {
-    header('Location: index.php');
+if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
+    header('Location: login_admin.php');
     exit();
 }
+
+/* if (!isset($_COOKIE['motorista_logado'])) {
+    header('Location: index.php');
+    exit();
+} */
 ?>
 <!-- <!DOCTYPE html>
 <html>
