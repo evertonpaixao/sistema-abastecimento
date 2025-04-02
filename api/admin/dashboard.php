@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['admin_logado'])) {
+if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
     header('Location: login_admin.php');
     exit();
 }
