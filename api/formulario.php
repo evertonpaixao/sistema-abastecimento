@@ -1,10 +1,10 @@
-<?php
-session_start();
-if (!isset($_COOKIE['motorista_logado'])) {
-    header('Location: index.php');
-    exit();
+<script>
+if (!sessionStorage.getItem("motorista_logado")) {
+    alert("Você precisa fazer login.");
+    window.location.href = "index.php";
 }
-?>
+</script>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">

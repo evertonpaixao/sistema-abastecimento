@@ -135,24 +135,51 @@
 
         <h1 class="form-title">Login do Motorista</h1>
 
-        <form action="auth.php" method="post">
-
+        <form id="loginForm">
             <div class="form-group">
-                <label>Nome:</label> <input type="text" name="nome" required><br>
+                <label>Nome:</label> 
+                <input type="text" name="nome" required><br>
             </div>
 
             <div class="form-group">
-                <label>Senha:</label> <input type="password" name="senha" required><br>
+                <label>Senha:</label> 
+                <input type="password" name="senha" required><br>
             </div>
 
             <div class="button-group">
-                <button  class="btn btn-submit" type="submit">Entrar</button>
+                <button class="btn btn-submit" type="submit">Entrar</button>
             </div>
         </form>
 
         <footer>
             <img src="images/logo-santoamaro.png" alt="" width="100%"/>
         </footer>
+
+    </div>
+
+    <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita que o formulário recarregue a página
+
+        let formData = new FormData(this);
+
+        fetch("auth.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                sessionStorage.setItem("motorista_logado", data.user);
+                window.location.href = "formulario.php";
+            } else {
+                alert("Login inválido!");
+            }
+        })
+        .catch(error => console.error("Erro na requisição:", error));
+    });
+    </script>
+
 
 </body>
 </html>
