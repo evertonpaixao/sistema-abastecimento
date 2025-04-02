@@ -5,35 +5,7 @@ if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
     exit();
 }
 
-/* if (!isset($_COOKIE['motorista_logado'])) {
-    header('Location: index.php');
-    exit();
-} */
 ?>
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Formulário de Abastecimento</title>
-</head>
-<body>
-    <h1>Formulário de Abastecimento</h1>
-    <form action="processar_formulario.php" method="post" enctype="multipart/form-data">
-        Quilometragem Inicial: <input type="number" name="km_inicial" required><br>
-        Quilometragem Final: <input type="number" name="km_final" required><br>
-        Litros Abastecidos: <input type="number" step="0.01" name="litros" required><br>
-        Tipo de Combustível:
-        <select name="combustivel" required>
-            <option value="Diesel">Diesel</option>
-            <option value="Gasolina">Gasolina</option>
-            <option value="Etanol">Etanol</option>
-        </select><br>
-        Placa do Veículo: <input type="text" name="placa" required><br>
-        Valor Abastecido: <input type="number" step="0.01" name="valor" required><br>
-        Foto do Painel: <input type="file" name="foto" accept="image/*" required><br>
-        <button type="submit">Enviar</button>
-    </form>
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -357,7 +329,7 @@ if (!isset($_COOKIE['admin_logado']) || $_COOKIE['admin_logado'] !== 'true') {
         </header>
 
         <h1 class="form-title">Registro de Abastecimento</h1>
-        <?php echo "Bem-vindo, " . htmlspecialchars($_COOKIE['motorista_logado']) . "!"; ?>
+        <!-- <?php echo "Bem-vindo, " . htmlspecialchars($_COOKIE['motorista_logado']) . "!"; ?> -->
         
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
