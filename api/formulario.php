@@ -11,7 +11,7 @@ if (!isset($_COOKIE['motorista_logado'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Abastecimento 2</title>
+    <title>Formulário de Abastecimento</title>
     <style>
         * {
             box-sizing: border-box;
