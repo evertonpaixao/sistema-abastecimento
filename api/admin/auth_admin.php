@@ -16,8 +16,7 @@ if ($usuario === $admin_usuario && $senha === $admin_senha) {
     setcookie('admin_logado', 'true', time() + 3600, '/', '', false, true);
     
     // Redireciona para o dashboard
-    //header('Location: dashboard.php');
-    header('Location: ../formulario.php');
+    header('Location: dashboard.php');
     exit();
 } else {
     echo 'Login inválido. <a href="login_admin.php">Tente novamente</a>';
